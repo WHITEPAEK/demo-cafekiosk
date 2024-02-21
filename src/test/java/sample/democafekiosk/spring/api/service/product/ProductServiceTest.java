@@ -1,13 +1,10 @@
 package sample.democafekiosk.spring.api.service.product;
 
-import org.assertj.core.groups.Tuple;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ActiveProfiles;
-import sample.democafekiosk.spring.api.controller.product.dto.request.ProductCreateRequest;
+import sample.democafekiosk.spring.IntegrationTestSupport;
 import sample.democafekiosk.spring.api.service.product.request.ProductCreateServiceRequest;
 import sample.democafekiosk.spring.api.service.product.response.ProductResponse;
 import sample.democafekiosk.spring.domain.product.Product;
@@ -22,9 +19,7 @@ import static org.assertj.core.groups.Tuple.tuple;
 import static sample.democafekiosk.spring.domain.product.ProductSellingStatus.SELLING;
 import static sample.democafekiosk.spring.domain.product.ProductType.HANDMADE;
 
-@ActiveProfiles("test")
-@SpringBootTest
-class ProductServiceTest {
+class ProductServiceTest extends IntegrationTestSupport {
 
     @Autowired
     private ProductService productService;
